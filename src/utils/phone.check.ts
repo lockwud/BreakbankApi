@@ -1,5 +1,5 @@
 import { HttpStatus } from './http-status';
-import { throwError } from '../middleware/errorHandler';
+import { throwError } from '../middlewares/errorHandler';
 
 // Phone Validator Function
 export const phoneValidator = async (phone: string) => {
