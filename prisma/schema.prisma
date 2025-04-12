@@ -1,0 +1,61 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // define your DB connection string in .env file
+}
+
+model user {
+    id String @id @default(uuid())
+    fullname String
+    email String @unique
+    password String
+    phone String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model fileUpload {
+    id String @id @default(uuid())
+    fileType filetypes @default(pdfs)
+    year DateTime
+    questionType questions? @default(All)
+    fileurl     String?
+    fileKey     String?
+    department  department 
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+
+
+enum department {
+    InformationTechnologyEducation
+    MathematicsEducation
+    Languages
+
+}
+
+enum faculty {
+    AppliedMathematics
+    Arts
+    BusinessEducation
+}
+
+enum filetypes {
+    pdfs
+    docs
+    image
+    All
+}
+
+enum questions {
+    MultipleChoice
+    theory
+    FillIns
+    All
+}
