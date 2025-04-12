@@ -23,7 +23,8 @@
       "fullname",
       "email",
       "password",
-      "phone",
+      "token",
+      "tokenExpiry",
       "createdAt",
       "updatedAt"
     ]
