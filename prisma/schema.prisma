@@ -21,41 +21,22 @@ model user {
 
 model fileUpload {
     id String @id @default(uuid())
-    fileType filetypes @default(pdfs)
+    title String
     year DateTime
-    questionType questions? @default(All)
-    fileurl     String?
-    fileKey     String?
-    department  department 
+    file    String[]
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 }
 
 
 
-enum department {
-    InformationTechnologyEducation
-    MathematicsEducation
-    Languages
-
-}
-
-enum faculty {
-    AppliedMathematics
-    Arts
-    BusinessEducation
-}
-
-enum filetypes {
-    pdfs
-    docs
-    image
-    All
-}
-
-enum questions {
-    MultipleChoice
-    theory
-    FillIns
-    All
+enum examType {
+    Midsem
+    Final
+    Quiz
+    Other
+    Assignment
+    PracticeQuestions
+    National
+    Entrance
 }
