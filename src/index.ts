@@ -2,6 +2,8 @@ import express, { Express, NextFunction, Request, Response } from "express";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import cors from "cors";
+import mainRouter from "./routers";
+import { ErrorHandler } from "./middlewares/errorHandler";
 
 dotenv.config();
 
@@ -15,9 +17,12 @@ app.use(
     credentials: true,
   })
 );
+app.use("/api", mainRouter)
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
 });
+
+app.use(ErrorHandler)
 
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
