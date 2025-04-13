@@ -30,3 +30,12 @@ export const getAllQuestions = async() =>{
     const uploads = await prisma.fileUpload.findMany()
     return uploads;
 }
+
+export const fetchQuestion = async(id: string) =>{
+    const upload = await prisma.fileUpload.findUnique({
+        where: {
+            id: id,
+        }
+    })
+    return upload;
+}

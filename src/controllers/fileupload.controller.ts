@@ -25,3 +25,14 @@ export const getQuestions = catchAsync(
         const questions = await fileUploadService.getAllQuestions();
         res.status(HttpStatus.CREATED).json({questions})
 });
+
+
+export const getQuestionsById = catchAsync(
+    async(req: Request, res: Response, next: NextFunction
+        
+    )=>{
+        const { id }  = req.params
+        const questions = await fileUploadService.fetchQuestion(id);
+        res.status(HttpStatus.CREATED).json({questions})
+});
+
