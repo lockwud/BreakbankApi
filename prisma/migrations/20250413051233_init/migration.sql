@@ -1,5 +1,8 @@
 -- CreateEnum
-CREATE TYPE "examType" AS ENUM ('Midsem', 'Final', 'Quiz', 'Other', 'Assignment', 'PracticeQuestions', 'National', 'Entrance');
+CREATE TYPE "subject" AS ENUM ('IT', 'ELECTRICALS', 'MATHEMATICS', 'PHYSICS');
+
+-- CreateEnum
+CREATE TYPE "examType" AS ENUM ('midsem', 'final', 'quiz', 'other', 'assignment', 'practicequestions', 'national', 'entrance');
 
 -- CreateTable
 CREATE TABLE "user" (
@@ -7,7 +10,8 @@ CREATE TABLE "user" (
     "fullname" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
-    "phone" TEXT NOT NULL,
+    "token" TEXT,
+    "tokenExpiry" TIMESTAMP(3),
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
@@ -19,7 +23,10 @@ CREATE TABLE "fileUpload" (
     "id" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "year" TIMESTAMP(3) NOT NULL,
+    "description" TEXT,
+    "subject" "subject" NOT NULL,
     "file" TEXT[],
+    "examType" "examType" NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 

@@ -35,10 +35,20 @@
       "id",
       "title",
       "year",
+      "description",
+      "subject",
       "examType",
-      "file",
       "createdAt",
       "updatedAt"
+    ]
+  },
+  {
+    "modelName": "subject",
+    "fields": [
+      "IT",
+      "ELECTRICALS",
+      "MATHEMATICS",
+      "PHYSICS"
     ]
   },
   {

@@ -1,5 +1,6 @@
 import { z } from "zod"
 import { examType } from "../enums/examtype.enum"
+import { subject } from "../enums/subject.enum";
 
 export const fileUploadSchema = z.object({
     title: z.string(),
@@ -18,6 +19,8 @@ export const fileUploadSchema = z.object({
         .min(new Date(2016, 0, 1), "Date cannot be before January 1, 2016")
         .max(new Date(), "Date cannot be in the future")
     ),
+    description: z.string().optional(),
+    subject: subject,
     file: z.array(z.string()),
     examType: examType,
 });

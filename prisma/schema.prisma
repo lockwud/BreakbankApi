@@ -24,13 +24,20 @@ model fileUpload {
     id String @id @default(uuid())
     title String
     year DateTime
+    description String?
+    subject subject
     file    String[]
     examType examType
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 }
 
-
+enum subject {
+  IT
+  ELECTRICALS
+  MATHEMATICS
+  PHYSICS
+}
 
 enum examType {
     midsem
