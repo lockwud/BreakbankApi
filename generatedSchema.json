@@ -1235,7 +1235,7 @@
           "kind": "field",
           "name": {
             "kind": "name",
-            "value": "createdAt",
+            "value": "examType",
             "location": {
               "start": {
                 "offset": 573,
@@ -1243,8 +1243,60 @@
                 "column": 5
               },
               "end": {
-                "offset": 582,
+                "offset": 581,
                 "line": 28,
+                "column": 13
+              }
+            }
+          },
+          "type": {
+            "kind": "typeId",
+            "name": {
+              "kind": "name",
+              "value": "examType",
+              "location": {
+                "start": {
+                  "offset": 582,
+                  "line": 28,
+                  "column": 14
+                },
+                "end": {
+                  "offset": 590,
+                  "line": 28,
+                  "column": 22
+                }
+              }
+            }
+          },
+          "attributes": [],
+          "comment": null,
+          "location": {
+            "start": {
+              "offset": 573,
+              "line": 28,
+              "column": 5
+            },
+            "end": {
+              "offset": 590,
+              "line": 28,
+              "column": 22
+            }
+          }
+        },
+        {
+          "kind": "field",
+          "name": {
+            "kind": "name",
+            "value": "createdAt",
+            "location": {
+              "start": {
+                "offset": 596,
+                "line": 29,
+                "column": 5
+              },
+              "end": {
+                "offset": 605,
+                "line": 29,
                 "column": 14
               }
             }
@@ -1256,13 +1308,13 @@
               "value": "DateTime",
               "location": {
                 "start": {
-                  "offset": 583,
-                  "line": 28,
+                  "offset": 606,
+                  "line": 29,
                   "column": 15
                 },
                 "end": {
-                  "offset": 591,
-                  "line": 28,
+                  "offset": 614,
+                  "line": 29,
                   "column": 23
                 }
               }
@@ -1278,13 +1330,13 @@
                 ],
                 "location": {
                   "start": {
-                    "offset": 593,
-                    "line": 28,
+                    "offset": 616,
+                    "line": 29,
                     "column": 25
                   },
                   "end": {
-                    "offset": 600,
-                    "line": 28,
+                    "offset": 623,
+                    "line": 29,
                     "column": 32
                   }
                 }
@@ -1299,13 +1351,13 @@
                     ],
                     "location": {
                       "start": {
-                        "offset": 601,
-                        "line": 28,
+                        "offset": 624,
+                        "line": 29,
                         "column": 33
                       },
                       "end": {
-                        "offset": 604,
-                        "line": 28,
+                        "offset": 627,
+                        "line": 29,
                         "column": 36
                       }
                     }
@@ -1315,13 +1367,13 @@
               ],
               "location": {
                 "start": {
-                  "offset": 592,
-                  "line": 28,
+                  "offset": 615,
+                  "line": 29,
                   "column": 24
                 },
                 "end": {
-                  "offset": 607,
-                  "line": 28,
+                  "offset": 630,
+                  "line": 29,
                   "column": 39
                 }
               }
@@ -1330,13 +1382,13 @@
           "comment": null,
           "location": {
             "start": {
-              "offset": 573,
-              "line": 28,
+              "offset": 596,
+              "line": 29,
               "column": 5
             },
             "end": {
-              "offset": 607,
-              "line": 28,
+              "offset": 630,
+              "line": 29,
               "column": 39
             }
           }
@@ -1348,13 +1400,13 @@
             "value": "updatedAt",
             "location": {
               "start": {
-                "offset": 613,
-                "line": 29,
+                "offset": 636,
+                "line": 30,
                 "column": 5
               },
               "end": {
-                "offset": 622,
-                "line": 29,
+                "offset": 645,
+                "line": 30,
                 "column": 14
               }
             }
@@ -1366,13 +1418,13 @@
               "value": "DateTime",
               "location": {
                 "start": {
-                  "offset": 623,
-                  "line": 29,
+                  "offset": 646,
+                  "line": 30,
                   "column": 15
                 },
                 "end": {
-                  "offset": 631,
-                  "line": 29,
+                  "offset": 654,
+                  "line": 30,
                   "column": 23
                 }
               }
@@ -1388,13 +1440,13 @@
                 ],
                 "location": {
                   "start": {
-                    "offset": 633,
-                    "line": 29,
+                    "offset": 656,
+                    "line": 30,
                     "column": 25
                   },
                   "end": {
-                    "offset": 642,
-                    "line": 29,
+                    "offset": 665,
+                    "line": 30,
                     "column": 34
                   }
                 }
@@ -1402,13 +1454,13 @@
               "args": [],
               "location": {
                 "start": {
-                  "offset": 632,
-                  "line": 29,
+                  "offset": 655,
+                  "line": 30,
                   "column": 24
                 },
                 "end": {
-                  "offset": 642,
-                  "line": 29,
+                  "offset": 665,
+                  "line": 30,
                   "column": 34
                 }
               }
@@ -1417,13 +1469,13 @@
           "comment": null,
           "location": {
             "start": {
-              "offset": 613,
-              "line": 29,
+              "offset": 636,
+              "line": 30,
               "column": 5
             },
             "end": {
-              "offset": 642,
-              "line": 29,
+              "offset": 665,
+              "line": 30,
               "column": 34
             }
           }
@@ -1436,8 +1488,8 @@
           "column": 1
         },
         "end": {
-          "offset": 645,
-          "line": 30,
+          "offset": 668,
+          "line": 31,
           "column": 2
         }
       }
@@ -1449,13 +1501,13 @@
         "value": "examType",
         "location": {
           "start": {
-            "offset": 658,
-            "line": 34,
+            "offset": 681,
+            "line": 35,
             "column": 6
           },
           "end": {
-            "offset": 666,
-            "line": 34,
+            "offset": 689,
+            "line": 35,
             "column": 14
           }
         }
@@ -1465,16 +1517,16 @@
           "kind": "enumValue",
           "name": {
             "kind": "name",
-            "value": "Midsem",
+            "value": "midsem",
             "location": {
               "start": {
-                "offset": 674,
-                "line": 35,
+                "offset": 697,
+                "line": 36,
                 "column": 5
               },
               "end": {
-                "offset": 680,
-                "line": 35,
+                "offset": 703,
+                "line": 36,
                 "column": 11
               }
             }
@@ -1483,13 +1535,13 @@
           "comment": null,
           "location": {
             "start": {
-              "offset": 674,
-              "line": 35,
+              "offset": 697,
+              "line": 36,
               "column": 5
             },
             "end": {
-              "offset": 680,
-              "line": 35,
+              "offset": 703,
+              "line": 36,
               "column": 11
             }
           }
@@ -1498,16 +1550,16 @@
           "kind": "enumValue",
           "name": {
             "kind": "name",
-            "value": "Final",
+            "value": "final",
             "location": {
               "start": {
-                "offset": 686,
-                "line": 36,
+                "offset": 709,
+                "line": 37,
                 "column": 5
               },
               "end": {
-                "offset": 691,
-                "line": 36,
+                "offset": 714,
+                "line": 37,
                 "column": 10
               }
             }
@@ -1516,13 +1568,13 @@
           "comment": null,
           "location": {
             "start": {
-              "offset": 686,
-              "line": 36,
+              "offset": 709,
+              "line": 37,
               "column": 5
             },
             "end": {
-              "offset": 691,
-              "line": 36,
+              "offset": 714,
+              "line": 37,
               "column": 10
             }
           }
@@ -1531,16 +1583,16 @@
           "kind": "enumValue",
           "name": {
             "kind": "name",
-            "value": "Quiz",
+            "value": "quiz",
             "location": {
               "start": {
-                "offset": 697,
-                "line": 37,
+                "offset": 720,
+                "line": 38,
                 "column": 5
               },
               "end": {
-                "offset": 701,
-                "line": 37,
+                "offset": 724,
+                "line": 38,
                 "column": 9
               }
             }
@@ -1549,13 +1601,13 @@
           "comment": null,
           "location": {
             "start": {
-              "offset": 697,
-              "line": 37,
+              "offset": 720,
+              "line": 38,
               "column": 5
             },
             "end": {
-              "offset": 701,
-              "line": 37,
+              "offset": 724,
+              "line": 38,
               "column": 9
             }
           }
@@ -1564,16 +1616,16 @@
           "kind": "enumValue",
           "name": {
             "kind": "name",
-            "value": "Other",
+            "value": "other",
             "location": {
               "start": {
-                "offset": 707,
-                "line": 38,
+                "offset": 730,
+                "line": 39,
                 "column": 5
               },
               "end": {
-                "offset": 712,
-                "line": 38,
+                "offset": 735,
+                "line": 39,
                 "column": 10
               }
             }
@@ -1582,13 +1634,13 @@
           "comment": null,
           "location": {
             "start": {
-              "offset": 707,
-              "line": 38,
+              "offset": 730,
+              "line": 39,
               "column": 5
             },
             "end": {
-              "offset": 712,
-              "line": 38,
+              "offset": 735,
+              "line": 39,
               "column": 10
             }
           }
@@ -1597,16 +1649,16 @@
           "kind": "enumValue",
           "name": {
             "kind": "name",
-            "value": "Assignment",
+            "value": "assignment",
             "location": {
               "start": {
-                "offset": 718,
-                "line": 39,
+                "offset": 741,
+                "line": 40,
                 "column": 5
               },
               "end": {
-                "offset": 728,
-                "line": 39,
+                "offset": 751,
+                "line": 40,
                 "column": 15
               }
             }
@@ -1615,13 +1667,13 @@
           "comment": null,
           "location": {
             "start": {
-              "offset": 718,
-              "line": 39,
+              "offset": 741,
+              "line": 40,
               "column": 5
             },
             "end": {
-              "offset": 728,
-              "line": 39,
+              "offset": 751,
+              "line": 40,
               "column": 15
             }
           }
@@ -1630,40 +1682,7 @@
           "kind": "enumValue",
           "name": {
             "kind": "name",
-            "value": "PracticeQuestions",
-            "location": {
-              "start": {
-                "offset": 734,
-                "line": 40,
-                "column": 5
-              },
-              "end": {
-                "offset": 751,
-                "line": 40,
-                "column": 22
-              }
-            }
-          },
-          "attributes": [],
-          "comment": null,
-          "location": {
-            "start": {
-              "offset": 734,
-              "line": 40,
-              "column": 5
-            },
-            "end": {
-              "offset": 751,
-              "line": 40,
-              "column": 22
-            }
-          }
-        },
-        {
-          "kind": "enumValue",
-          "name": {
-            "kind": "name",
-            "value": "National",
+            "value": "practicequestions",
             "location": {
               "start": {
                 "offset": 757,
@@ -1671,9 +1690,9 @@
                 "column": 5
               },
               "end": {
-                "offset": 765,
+                "offset": 774,
                 "line": 41,
-                "column": 13
+                "column": 22
               }
             }
           },
@@ -1686,9 +1705,9 @@
               "column": 5
             },
             "end": {
-              "offset": 765,
+              "offset": 774,
               "line": 41,
-              "column": 13
+              "column": 22
             }
           }
         },
@@ -1696,15 +1715,15 @@
           "kind": "enumValue",
           "name": {
             "kind": "name",
-            "value": "Entrance",
+            "value": "national",
             "location": {
               "start": {
-                "offset": 771,
+                "offset": 780,
                 "line": 42,
                 "column": 5
               },
               "end": {
-                "offset": 779,
+                "offset": 788,
                 "line": 42,
                 "column": 13
               }
@@ -1714,13 +1733,46 @@
           "comment": null,
           "location": {
             "start": {
-              "offset": 771,
+              "offset": 780,
               "line": 42,
               "column": 5
             },
             "end": {
-              "offset": 779,
+              "offset": 788,
               "line": 42,
+              "column": 13
+            }
+          }
+        },
+        {
+          "kind": "enumValue",
+          "name": {
+            "kind": "name",
+            "value": "entrance",
+            "location": {
+              "start": {
+                "offset": 794,
+                "line": 43,
+                "column": 5
+              },
+              "end": {
+                "offset": 802,
+                "line": 43,
+                "column": 13
+              }
+            }
+          },
+          "attributes": [],
+          "comment": null,
+          "location": {
+            "start": {
+              "offset": 794,
+              "line": 43,
+              "column": 5
+            },
+            "end": {
+              "offset": 802,
+              "line": 43,
               "column": 13
             }
           }
@@ -1728,13 +1780,13 @@
       ],
       "location": {
         "start": {
-          "offset": 653,
-          "line": 34,
+          "offset": 676,
+          "line": 35,
           "column": 1
         },
         "end": {
-          "offset": 782,
-          "line": 43,
+          "offset": 805,
+          "line": 44,
           "column": 2
         }
       }

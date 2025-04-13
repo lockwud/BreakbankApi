@@ -25,6 +25,7 @@ model fileUpload {
     title String
     year DateTime
     file    String[]
+    examType examType
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 }
@@ -32,12 +33,12 @@ model fileUpload {
 
 
 enum examType {
-    Midsem
-    Final
-    Quiz
-    Other
-    Assignment
-    PracticeQuestions
-    National
-    Entrance
+    midsem
+    final
+    quiz
+    other
+    assignment
+    practicequestions
+    national
+    entrance
 }

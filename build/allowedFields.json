@@ -1,0 +1,55 @@
+[
+    {
+        "modelName": "",
+        "fields": []
+    },
+    {
+        "modelName": "client",
+        "fields": [
+            "provider"
+        ]
+    },
+    {
+        "modelName": "db",
+        "fields": [
+            "provider",
+            "url"
+        ]
+    },
+    {
+        "modelName": "user",
+        "fields": [
+            "id",
+            "fullname",
+            "email",
+            "password",
+            "token",
+            "tokenExpiry",
+            "createdAt",
+            "updatedAt"
+        ]
+    },
+    {
+        "modelName": "fileUpload",
+        "fields": [
+            "id",
+            "title",
+            "year",
+            "createdAt",
+            "updatedAt"
+        ]
+    },
+    {
+        "modelName": "examType",
+        "fields": [
+            "Midsem",
+            "Final",
+            "Quiz",
+            "Other",
+            "Assignment",
+            "PracticeQuestions",
+            "National",
+            "Entrance"
+        ]
+    }
+]

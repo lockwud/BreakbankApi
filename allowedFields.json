@@ -35,6 +35,7 @@
       "id",
       "title",
       "year",
+      "examType",
       "createdAt",
       "updatedAt"
     ]
@@ -42,14 +43,14 @@
   {
     "modelName": "examType",
     "fields": [
-      "Midsem",
-      "Final",
-      "Quiz",
-      "Other",
-      "Assignment",
-      "PracticeQuestions",
-      "National",
-      "Entrance"
+      "midsem",
+      "final",
+      "quiz",
+      "other",
+      "assignment",
+      "practicequestions",
+      "national",
+      "entrance"
     ]
   }
 ]
