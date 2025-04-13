@@ -6,6 +6,7 @@ const uploadRoute = Router();
 
 
 uploadRoute.post("/", 
+    validatePayload('fileUpload'),
     file.uploadQuestion
 );
 
