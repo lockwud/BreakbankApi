@@ -1,10 +1,11 @@
 import {Router } from "express"
+import authRoute from "./auth.route";
 const webRouter = Router();
 
 
 
-webRouter.use()
-webRouter.use()
+webRouter.use("/auth", authRoute)
+webRouter.use("/question")
 
 
 
