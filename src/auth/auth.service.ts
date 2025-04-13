@@ -82,6 +82,9 @@ export const login = async(data: loginDto) => {
 
             }
          })
-        return {userWithoutPassword};
+        return {
+            token,
+            userWithoutPassword
+        };
     }
 }
