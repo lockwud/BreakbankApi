@@ -1,11 +1,12 @@
 import { validatePayload } from './../../middlewares/validate-payload';
 import { Router } from "express";
 import * as file from "../../controllers/fileupload.controller"
-import {authenticateJWT} from "../../utils/jsonwebtoken"
+import upload from '../../utils/multer';
 const uploadRoute = Router();
 
 
 uploadRoute.post("/", 
+    upload.array("files"),
     validatePayload('fileUpload'),
     file.uploadQuestion
 );
