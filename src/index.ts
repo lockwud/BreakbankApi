@@ -17,10 +17,12 @@ app.use(
     credentials: true,
   })
 );
-app.use("/api", mainRouter)
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
 });
+
+app.use("/api", mainRouter)
+
 
 app.use(ErrorHandler)
 
