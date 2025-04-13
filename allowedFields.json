@@ -36,6 +36,7 @@
       "title",
       "year",
       "examType",
+      "file",
       "createdAt",
       "updatedAt"
     ]
