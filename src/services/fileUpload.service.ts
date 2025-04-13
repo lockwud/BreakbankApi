@@ -39,3 +39,12 @@ export const fetchQuestion = async(id: string) =>{
     })
     return upload;
 }
+
+export const updateQuestion = async(id: string, data: Partial<fileDto>) =>{
+    const update = await prisma.fileUpload.update({
+        where: {
+            id: id,
+        },
+        data
+    })
+}
