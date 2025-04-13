@@ -47,4 +47,14 @@ export const updateQuestion = async(id: string, data: Partial<fileDto>) =>{
         },
         data
     })
+    return update;
+}
+
+export const deleteQuestion = async(id: string) =>{
+    const deleted = await prisma.fileUpload.delete({
+        where: {
+            id: id,
+        },
+    })
+    return deleted;
 }

@@ -36,3 +36,23 @@ export const getQuestionsById = catchAsync(
         res.status(HttpStatus.CREATED).json({questions})
 });
 
+
+export const updateQuestion = catchAsync(
+    async(req: Request, res: Response, next: NextFunction
+        
+    )=>{
+        const {data}  = req.body
+        const { id }  = req.params
+        const questions = await fileUploadService.updateQuestion(id, data);
+        res.status(HttpStatus.CREATED).json({questions})
+});
+
+
+export const deleteQuestion = catchAsync(
+    async(req: Request, res: Response, next: NextFunction
+        
+    )=>{
+        const { id }  = req.params
+        const question = await fileUploadService.deleteQuestion(id);
+        res.status(HttpStatus.CREATED).json({question})
+});

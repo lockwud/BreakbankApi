@@ -13,4 +13,16 @@ uploadRoute.get("/",
     file.getQuestions
 );
 
+uploadRoute.patch("/:id",
+    file.updateQuestion
+);
+
+uploadRoute.delete("/:id",
+    file.deleteQuestion
+);
+
+uploadRoute.get("/:id",
+    file.getQuestionsById
+)
+
 export default uploadRoute
