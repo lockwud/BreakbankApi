@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(
   cors({
-    origin: true,
+    origin: ["https://breakbankapi.onrender.com", "http://localhost:3000"],
     credentials: true,
   })
 );
