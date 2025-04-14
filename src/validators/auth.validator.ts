@@ -9,7 +9,7 @@ const studentIdSchema = z
     const suffix = parseInt(val.slice(7), 10);
     return prefix === '5221040' && suffix >= 1 && suffix <= 300;
   }, {
-    message: 'Student ID must start with 5221040 and end with a number between 001 and 300',
+    message: 'Invalid Student ID',
   });
 
 export const signupSchema = z.object({
