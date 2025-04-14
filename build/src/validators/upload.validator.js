@@ -19,7 +19,7 @@ exports.fileUploadSchema = zod_1.z.object({
         .min(new Date(2016, 0, 1), "Date cannot be before January 1, 2016")
         .max(new Date(), "Date cannot be in the future")),
     description: zod_1.z.string().optional(),
-    subject: subject_enum_1.subject,
+    course: subject_enum_1.course,
     file: zod_1.z.array(zod_1.z.string()),
     examType: examtype_enum_1.examType,
 });

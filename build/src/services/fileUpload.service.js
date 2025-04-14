@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteQuestion = exports.updateQuestion = exports.fetchQuestion = exports.getAllQuestions = exports.uploadQuestion = void 0;
+exports.getDownloadUrl = exports.deleteQuestion = exports.updateQuestion = exports.fetchQuestion = exports.getAllQuestions = exports.uploadQuestion = void 0;
 const http_status_1 = require("../utils/http-status");
 const prisma_1 = __importDefault(require("../utils/prisma"));
 const errorHandler_1 = require("../middlewares/errorHandler");
@@ -29,7 +29,7 @@ const uploadQuestion = (data) => __awaiter(void 0, void 0, void 0, function* () 
                 title: data.title,
                 year: new Date(data.year),
                 description: data.description,
-                subject: data.subject,
+                course: data.course,
                 file: data.file,
                 examType: data.examType,
             }
@@ -71,3 +71,18 @@ const deleteQuestion = (id) => __awaiter(void 0, void 0, void 0, function* () {
     return deleted;
 });
 exports.deleteQuestion = deleteQuestion;
+const getDownloadUrl = (id, index) => __awaiter(void 0, void 0, void 0, function* () {
+    const question = yield prisma_1.default.fileUpload.findUnique({
+        where: { id },
+    });
+    if (!question || !question.file || question.file.length === 0) {
+        throw new Error("No files found for this question");
+    }
+    if (index < 0 || index >= question.file.length) {
+        throw new Error("Invalid file index");
+    }
+    const originalUrl = question.file[index];
+    const downloadUrl = originalUrl.replace("/upload/", "/upload/fl_attachment/");
+    return downloadUrl;
+});
+exports.getDownloadUrl = getDownloadUrl;

@@ -42,7 +42,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteQuestion = exports.updateQuestion = exports.getQuestionsById = exports.getQuestions = exports.uploadQuestion = void 0;
+exports.downloadFileById = exports.deleteQuestion = exports.updateQuestion = exports.getQuestionsById = exports.getQuestions = exports.uploadQuestion = void 0;
 const fileUploadService = __importStar(require("../services/fileUpload.service"));
 const http_status_1 = require("../utils/http-status");
 const catchAsync_1 = require("../utils/catchAsync");
@@ -72,4 +72,10 @@ exports.deleteQuestion = (0, catchAsync_1.catchAsync)((req, res, next) => __awai
     const { id } = req.params;
     const question = yield fileUploadService.deleteQuestion(id);
     res.status(http_status_1.HttpStatus.CREATED).json({ question });
+}));
+exports.downloadFileById = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { id } = req.params;
+    const index = parseInt(req.query.index || "0", 10); // Default to 0 if no index provided
+    const downloadUrl = yield fileUploadService.getDownloadUrl(id, index);
+    return res.redirect(downloadUrl); // Direct redirect to Cloudinary download URL
 }));

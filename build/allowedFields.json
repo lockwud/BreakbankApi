@@ -1,67 +1,67 @@
 [
-    {
-        "modelName": "",
-        "fields": []
-    },
-    {
-        "modelName": "client",
-        "fields": [
-            "provider"
-        ]
-    },
-    {
-        "modelName": "db",
-        "fields": [
-            "provider",
-            "url"
-        ]
-    },
-    {
-        "modelName": "user",
-        "fields": [
-            "id",
-            "fullname",
-            "email",
-            "password",
-            "token",
-            "tokenExpiry",
-            "createdAt",
-            "updatedAt"
-        ]
-    },
-    {
-        "modelName": "fileUpload",
-        "fields": [
-            "id",
-            "title",
-            "year",
-            "description",
-            "subject",
-            "examType",
-            "createdAt",
-            "updatedAt"
-        ]
-    },
-    {
-        "modelName": "subject",
-        "fields": [
-            "IT",
-            "ELECTRICALS",
-            "MATHEMATICS",
-            "PHYSICS"
-        ]
-    },
-    {
-        "modelName": "examType",
-        "fields": [
-            "midsem",
-            "final",
-            "quiz",
-            "other",
-            "assignment",
-            "practicequestions",
-            "national",
-            "entrance"
-        ]
-    }
+  {
+    "modelName": "",
+    "fields": []
+  },
+  {
+    "modelName": "client",
+    "fields": [
+      "provider"
+    ]
+  },
+  {
+    "modelName": "db",
+    "fields": [
+      "provider",
+      "url"
+    ]
+  },
+  {
+    "modelName": "user",
+    "fields": [
+      "id",
+      "fullname",
+      "studentId",
+      "password",
+      "token",
+      "tokenExpiry",
+      "createdAt",
+      "updatedAt"
+    ]
+  },
+  {
+    "modelName": "fileUpload",
+    "fields": [
+      "id",
+      "title",
+      "year",
+      "description",
+      "course",
+      "examType",
+      "createdAt",
+      "updatedAt"
+    ]
+  },
+  {
+    "modelName": "course",
+    "fields": [
+      "IT",
+      "ELECTRICALS",
+      "MATHEMATICS",
+      "PHYSICS"
+    ]
+  },
+  {
+    "modelName": "examType",
+    "fields": [
+      "midsem",
+      "final",
+      "quiz",
+      "other",
+      "assignment",
+      "practicequestions",
+      "national",
+      "entrance"
+    ]
+  }
 ]

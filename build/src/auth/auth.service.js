@@ -31,7 +31,6 @@ const auth_validator_1 = require("../validators/auth.validator");
 const jsonwebtoken_1 = require("../utils/jsonwebtoken");
 const errorHandler_1 = require("../middlewares/errorHandler");
 const http_error_1 = __importDefault(require("../utils/http-error"));
-const js_cookie_1 = __importDefault(require("js-cookie"));
 const signup = (data) => __awaiter(void 0, void 0, void 0, function* () {
     const validatesignupData = auth_validator_1.signupSchema.safeParse(data);
     if (!validatesignupData.success) {
@@ -42,16 +41,16 @@ const signup = (data) => __awaiter(void 0, void 0, void 0, function* () {
         const hashedPassword = yield (0, bcrypt_1.hash)(data.password);
         const findUser = yield prisma_1.default.user.findUnique({
             where: {
-                email: data.email
+                studentId: data.studentId
             }
         });
         if (findUser) {
-            throw new http_error_1.default(http_status_1.HttpStatus.CONFLICT, "Email already exist");
+            throw new http_error_1.default(http_status_1.HttpStatus.CONFLICT, "Student ID already exist");
         }
         const user = yield prisma_1.default.user.create({
             data: {
                 fullname: data.fullname,
-                email: data.email,
+                studentId: data.studentId,
                 password: hashedPassword,
             }
         });
@@ -59,7 +58,7 @@ const signup = (data) => __awaiter(void 0, void 0, void 0, function* () {
         // Extract user ID and email to create the payload for the token
         const payload = {
             id: user.id,
-            email: user.email,
+            studentId: user.studentId,
         };
         // Generate the token using signToken function
         const token = (0, jsonwebtoken_1.signToken)(payload);
@@ -79,7 +78,7 @@ const login = (data) => __awaiter(void 0, void 0, void 0, function* () {
     else {
         const findUser = yield prisma_1.default.user.findUnique({
             where: {
-                email: data.email
+                studentId: data.studentId
             }
         });
         if (!findUser) {
@@ -90,7 +89,7 @@ const login = (data) => __awaiter(void 0, void 0, void 0, function* () {
             throw new http_error_1.default(http_status_1.HttpStatus.UNAUTHORIZED, "Invalid password");
         }
         const { password } = findUser, userWithoutPassword = __rest(findUser, ["password"]);
-        const token = (0, jsonwebtoken_1.signToken)({ id: findUser.id, email: findUser.email });
+        const token = (0, jsonwebtoken_1.signToken)({ id: findUser.id, studentId: findUser.studentId });
         yield prisma_1.default.user.update({
             where: {
                 id: findUser.id
@@ -105,9 +104,3 @@ const login = (data) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.login = login;
-// Get token from user data
-if (!userData.token) {
-    throw new Error('Authentication token not found in response');
-}
-// Store auth token
-js_cookie_1.default.set('auth-token', userData.token, { expires: 7 });

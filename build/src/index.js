@@ -14,10 +14,8 @@ const app = (0, express_1.default)();
 const port = process.env.PORT || 4500;
 app.use(express_1.default.json());
 app.use((0, morgan_1.default)("dev"));
-app.use((0, cors_1.default)({
-    origin: true,
-    credentials: true,
-}));
+app.use((0, cors_1.default)());
+app.options('*', (0, cors_1.default)());
 app.get("/", (req, res) => {
     res.send("Express + TypeScript Server");
 });
