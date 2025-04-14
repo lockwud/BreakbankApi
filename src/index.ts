@@ -11,11 +11,12 @@ const app: Express = express();
 const port = process.env.PORT || 4500;
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+  })
+);
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
 });
