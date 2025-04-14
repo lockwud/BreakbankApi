@@ -21,7 +21,7 @@ export const signup = async(data: signupDto) => {
         const hashedPassword = await hash(data.password)
         const findUser = await prisma.user.findUnique({
             where: {
-                email: data.email
+                studentId: data.studentId
             }
         })
         if (findUser){
@@ -30,7 +30,7 @@ export const signup = async(data: signupDto) => {
         const user = await prisma.user.create({
             data: {
                 fullname: data.fullname,
-                email: data.email,
+                studentId: data.studentId,
                 password: hashedPassword,
             }
         })
@@ -38,7 +38,7 @@ export const signup = async(data: signupDto) => {
          // Extract user ID and email to create the payload for the token
          const payload = {
             id: user.id,
-            email: user.email,
+            studentId: user.studentId,
         };
 
         // Generate the token using signToken function
@@ -62,7 +62,7 @@ export const login = async(data: loginDto) => {
     }else{
         const findUser = await prisma.user.findUnique({
             where: {
-                email: data.email
+                studentId: data.studentId
             }
         })
         if(!findUser) {
@@ -73,7 +73,7 @@ export const login = async(data: loginDto) => {
             throw new HttpException(HttpStatus.UNAUTHORIZED, "Invalid password")
         }
         const {password, ...userWithoutPassword} = findUser
-        const token = signToken({id: findUser.id, email: findUser.email})
+        const token = signToken({id: findUser.id, studentId: findUser.studentId})
          await prisma.user.update({
             where:{
                 id: findUser.id

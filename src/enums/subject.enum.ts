@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const subject = z.enum([
+export const course = z.enum([
     "IT",
     "ELECTRICALS",
     "MATHEMATICS",

@@ -12,7 +12,7 @@ datasource db {
 model user {
     id String @id @default(uuid())
     fullname String
-    email String @unique
+    studentId String @unique
     password String
     token String?
     tokenExpiry DateTime?
@@ -25,14 +25,14 @@ model fileUpload {
     title String
     year DateTime
     description String?
-    subject subject
+    course  course
     file    String[]
     examType examType
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 }
 
-enum subject {
+enum course {
   IT
   ELECTRICALS
   MATHEMATICS

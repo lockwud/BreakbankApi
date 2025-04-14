@@ -1,5 +1,5 @@
 -- CreateEnum
-CREATE TYPE "subject" AS ENUM ('IT', 'ELECTRICALS', 'MATHEMATICS', 'PHYSICS');
+CREATE TYPE "course" AS ENUM ('IT', 'ELECTRICALS', 'MATHEMATICS', 'PHYSICS');
 
 -- CreateEnum
 CREATE TYPE "examType" AS ENUM ('midsem', 'final', 'quiz', 'other', 'assignment', 'practicequestions', 'national', 'entrance');
@@ -8,7 +8,7 @@ CREATE TYPE "examType" AS ENUM ('midsem', 'final', 'quiz', 'other', 'assignment'
 CREATE TABLE "user" (
     "id" TEXT NOT NULL,
     "fullname" TEXT NOT NULL,
-    "email" TEXT NOT NULL,
+    "studentId" TEXT NOT NULL,
     "password" TEXT NOT NULL,
     "token" TEXT,
     "tokenExpiry" TIMESTAMP(3),
@@ -24,7 +24,7 @@ CREATE TABLE "fileUpload" (
     "title" TEXT NOT NULL,
     "year" TIMESTAMP(3) NOT NULL,
     "description" TEXT,
-    "subject" "subject" NOT NULL,
+    "course" "course" NOT NULL,
     "file" TEXT[],
     "examType" "examType" NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -34,4 +34,4 @@ CREATE TABLE "fileUpload" (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "user_email_key" ON "user"("email");
+CREATE UNIQUE INDEX "user_studentId_key" ON "user"("studentId");

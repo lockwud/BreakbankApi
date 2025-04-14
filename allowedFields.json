@@ -21,7 +21,7 @@
     "fields": [
       "id",
       "fullname",
-      "email",
+      "studentId",
       "password",
       "token",
       "tokenExpiry",
@@ -36,14 +36,14 @@
       "title",
       "year",
       "description",
-      "subject",
+      "course",
       "examType",
       "createdAt",
       "updatedAt"
     ]
   },
   {
-    "modelName": "subject",
+    "modelName": "course",
     "fields": [
       "IT",
       "ELECTRICALS",
