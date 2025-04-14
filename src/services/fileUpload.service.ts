@@ -19,7 +19,7 @@ export const uploadQuestion = async(data: fileDto) =>{
                 title: data.title,
                 year: new Date(data.year),
                 description: data.description,
-                subject: data.subject,
+                course: data.course,
                 file: data.file,
                 examType: data.examType,
             }
