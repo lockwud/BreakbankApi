@@ -35,21 +35,33 @@
             "id",
             "title",
             "year",
+            "description",
+            "subject",
+            "examType",
             "createdAt",
             "updatedAt"
         ]
     },
     {
+        "modelName": "subject",
+        "fields": [
+            "IT",
+            "ELECTRICALS",
+            "MATHEMATICS",
+            "PHYSICS"
+        ]
+    },
+    {
         "modelName": "examType",
         "fields": [
-            "Midsem",
-            "Final",
-            "Quiz",
-            "Other",
-            "Assignment",
-            "PracticeQuestions",
-            "National",
-            "Entrance"
+            "midsem",
+            "final",
+            "quiz",
+            "other",
+            "assignment",
+            "practicequestions",
+            "national",
+            "entrance"
         ]
     }
 ]

@@ -31,6 +31,7 @@ const auth_validator_1 = require("../validators/auth.validator");
 const jsonwebtoken_1 = require("../utils/jsonwebtoken");
 const errorHandler_1 = require("../middlewares/errorHandler");
 const http_error_1 = __importDefault(require("../utils/http-error"));
+const js_cookie_1 = __importDefault(require("js-cookie"));
 const signup = (data) => __awaiter(void 0, void 0, void 0, function* () {
     const validatesignupData = auth_validator_1.signupSchema.safeParse(data);
     if (!validatesignupData.success) {
@@ -98,7 +99,15 @@ const login = (data) => __awaiter(void 0, void 0, void 0, function* () {
                 token: token
             }
         });
-        return { userWithoutPassword };
+        return {
+            userWithoutPassword
+        };
     }
 });
 exports.login = login;
+// Get token from user data
+if (!userData.token) {
+    throw new Error('Authentication token not found in response');
+}
+// Store auth token
+js_cookie_1.default.set('auth-token', userData.token, { expires: 7 });

@@ -7,6 +7,8 @@ const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
+const routers_1 = __importDefault(require("./routers"));
+const errorHandler_1 = require("./middlewares/errorHandler");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT || 4500;
@@ -19,6 +21,8 @@ app.use((0, cors_1.default)({
 app.get("/", (req, res) => {
     res.send("Express + TypeScript Server");
 });
+app.use("/api", routers_1.default);
+app.use(errorHandler_1.ErrorHandler);
 app.listen(port, () => {
     console.log(`[server]: Server is running at http://localhost:${port}`);
 });

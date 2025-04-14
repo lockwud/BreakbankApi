@@ -6,6 +6,7 @@ import { signToken, UserPayload } from "../utils/jsonwebtoken";
 import { throwError } from "../middlewares/errorHandler";
 import { checkMobileNetwork, phoneValidator } from "../utils/phone.check";
 import HttpException from "../utils/http-error";
+import Cookies from "js-cookie";
 
 export const signup = async(data: signupDto) => {
     const validatesignupData = signupSchema.safeParse(data);
@@ -87,3 +88,4 @@ export const login = async(data: loginDto) => {
         };
     }
 }
+
