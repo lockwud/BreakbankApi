@@ -25,7 +25,7 @@ export const signup = async(data: signupDto) => {
             }
         })
         if (findUser){
-            throw new HttpException(HttpStatus.CONFLICT, "Email already exist")
+            throw new HttpException(HttpStatus.CONFLICT, "Student ID already exist")
         }
         const user = await prisma.user.create({
             data: {

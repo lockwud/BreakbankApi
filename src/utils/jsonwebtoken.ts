@@ -6,7 +6,7 @@ import { HttpStatus } from "./http-status";
 // Define the payload to handle both admin and users
 export interface UserPayload {
   id: string;
-  email: string;
+ studentId: string;
 }
 
 declare global {
