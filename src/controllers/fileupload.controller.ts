@@ -56,3 +56,14 @@ export const deleteQuestion = catchAsync(
         const question = await fileUploadService.deleteQuestion(id);
         res.status(HttpStatus.CREATED).json({question})
 });
+
+
+export const downloadFileById = catchAsync(
+    async (req: Request, res: Response) => {
+      const { id } = req.params;
+      const index = parseInt(req.query.index as string || "0", 10); // Default to 0 if no index provided
+  
+      const downloadUrl = await fileUploadService.getDownloadUrl(id, index);
+      return res.redirect(downloadUrl); // Direct redirect to Cloudinary download URL
+    }
+  );

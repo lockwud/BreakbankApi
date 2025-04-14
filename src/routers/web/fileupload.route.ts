@@ -27,4 +27,9 @@ uploadRoute.get("/:id",
     file.getQuestionsById
 )
 
+upload.get("/download/:id", 
+file.downloadFileById
+);
+
+
 export default uploadRoute
