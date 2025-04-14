@@ -21,3 +21,5 @@ export const login = catchAsync(
         const user = await userService.login(data)
         res.status(HttpStatus.OK).json({user})
 });
+
+
