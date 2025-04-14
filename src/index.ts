@@ -12,7 +12,7 @@ const port = process.env.PORT || 4500;
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cors({
-  origin: 'https://break-bank-smoky.vercel.app/',
+  origin: 'https://break-bank-smoky.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
