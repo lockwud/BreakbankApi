@@ -27,7 +27,7 @@ uploadRoute.get("/:id",
     file.getQuestionsById
 )
 
-upload.get("/download/:id", 
+uploadRoute.get("/download/:id", 
 file.downloadFileById
 );
 
