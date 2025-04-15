@@ -11,7 +11,11 @@ const app: Express = express();
 const port = process.env.PORT || 4500;
 app.use(express.json()); // Must be before route handlers
 app.use(morgan("dev"));
-app.use(cors());
+
+app.use(cors({
+  origin: 'https://break-tawny.vercel.app', // Replace with your frontend URL
+  credentials: true, // Allow credentials (cookies, authorization headers)
+}));
 
 // ✅ Handle preflight OPTIONS requests
 app.get("/", (req: Request, res: Response) => {
