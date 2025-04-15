@@ -23,8 +23,6 @@ app.use(cors({
 }));
 
 // ✅ Handle preflight OPTIONS requests
-app.options('*', cors());
-
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
 });
