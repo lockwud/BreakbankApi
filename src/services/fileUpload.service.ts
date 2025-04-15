@@ -61,14 +61,20 @@ export const deleteQuestion = async(id: string) =>{
     return deleted;
 }
 
-export const getDownloadUrlById = async (id: string, index: number): Promise<string | null> => {
+export const getDownloadUrl = async (id: string, index: number): Promise<string> => {
     const question = await prisma.fileUpload.findUnique({
       where: { id },
     });
   
-    if (!question || !question.file || !question.file[index]) {
-      return null;
+    if (!question || !question.file || question.file.length === 0) {
+      throw new Error("No files found for this question");
     }
   
-    return question.file[index]; // Cloudinary file URL
+    if (index < 0 || index >= question.file.length) {
+      throw new Error("Invalid file index");
+    }
+  
+    const originalUrl = question.file[index];
+    const downloadUrl = originalUrl.replace("/upload/", "/upload/fl_attachment/");
+    return downloadUrl;
   };

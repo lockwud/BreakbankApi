@@ -25,7 +25,7 @@ uploadRoute.delete("/:id",
 
 uploadRoute.get("/:id",
     file.getQuestionsById
-)
+);
 
 uploadRoute.get("/download/:id", 
 file.downloadFileById

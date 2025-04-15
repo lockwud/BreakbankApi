@@ -1,3 +1,4 @@
+import { getAllQuestions } from './../services/fileUpload.service';
 import { Request, Response, NextFunction } from "express";
 import * as fileUploadService from "../services/fileUpload.service"
 import { HttpStatus } from "../utils/http-status";
@@ -57,21 +58,13 @@ export const deleteQuestion = catchAsync(
 });
 
 
-
-export const downloadFileById = async (req: Request, res: Response) => {
-  try {
-    const { id } = req.params;
-    const index = parseInt(req.query.index as string || '0');
-
-    const url = await fileUploadService.getDownloadUrlById(id, index);
-
-    if (!url) {
-      return res.status(404).json({ message: 'File not found' });
+export const downloadFileById = catchAsync(
+    async (req: Request, res: Response) => {
+      const { id } = req.params;
+      const index = parseInt(req.query.index as string || "0", 10); // Default to 0 if no index provided
+  
+      const downloadUrl = await fileUploadService.getDownloadUrl(id, index);
+      return res.json({downloadUrl}); // Direct redirect to Cloudinary download URL
     }
-
-    return res.json({ url });
-  } catch (error) {
-    console.error('Download error:', error);
-    return res.status(500).json({ message: 'Internal server error' });
-  }
-};
+  );
+  
