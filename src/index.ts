@@ -13,10 +13,7 @@ app.use(express.json()); // Must be before route handlers
 app.use(morgan("dev"));
 app.use(cors())
 app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'https://break-tawny.vercel.app'
-  ],
+  origin: true,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
