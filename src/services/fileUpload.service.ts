@@ -67,11 +67,11 @@ export const getDownloadUrl = async (id: string, index: number): Promise<string>
     });
   
     if (!question || !question.file || question.file.length === 0) {
-      throw new Error("No files found for this question");
+      return ("No files found for this question");
     }
   
     if (index < 0 || index >= question.file.length) {
-      throw new Error("Invalid file index");
+      return("Invalid file index");
     }
   
     const originalUrl = question.file[index];
