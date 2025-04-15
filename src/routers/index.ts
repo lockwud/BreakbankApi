@@ -1,8 +1,13 @@
-import { Router } from "express"
+import {Router} from "express"
 import webRouter from "./web/webRouter";
 const mainRouter = Router();
 
-// Web routes
-mainRouter.use("/web", webRouter);
+
+
+
+mainRouter.use("/web", webRouter)
+// mainRouter.use("mobile")
+
+
 
 export default mainRouter;
