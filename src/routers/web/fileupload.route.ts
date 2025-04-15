@@ -4,32 +4,36 @@ import * as file from "../../controllers/fileupload.controller"
 import upload from '../../utils/multer';
 const uploadRoute = Router();
 
-
+// Upload a new question
 uploadRoute.post("/", 
     upload.array("file"),
     validatePayload('fileUpload'),
     file.uploadQuestion
 );
 
+// Get all questions
 uploadRoute.get("/", 
     file.getQuestions
 );
 
-uploadRoute.patch("/:id",
+// Update a question by ID
+uploadRoute.patch("/:id([a-zA-Z0-9-]+)",
     file.updateQuestion
 );
 
-uploadRoute.delete("/:id",
+// Delete a question by ID
+uploadRoute.delete("/:id([a-zA-Z0-9-]+)",
     file.deleteQuestion
 );
 
-uploadRoute.get("/:id",
+// Get a question by ID
+uploadRoute.get("/:id([a-zA-Z0-9-]+)",
     file.getQuestionsById
 );
 
-uploadRoute.get("/download/:id", 
-file.downloadFileById
+// Download a file by ID
+uploadRoute.get("/download/:id([a-zA-Z0-9-]+)", 
+    file.downloadFileById
 );
-
 
 export default uploadRoute
