@@ -59,12 +59,17 @@ export const deleteQuestion = catchAsync(
 
 
 export const downloadFileById = catchAsync(
-    async (req: Request, res: Response) => {
-      const { id } = req.params;
-      const index = parseInt(req.query.index as string || "0", 10); // Default to 0 if no index provided
-  
-      const downloadUrl = await fileUploadService.getDownloadUrl(id, index);
-      return res.json({downloadUrl}); // Direct redirect to Cloudinary download URL
+  async (req: Request, res: Response) => {
+    const { id } = req.params;
+    const index = parseInt(req.query.index as string || "0", 10); // Default to 0 if no index provided
+
+    const downloadUrl = await fileUploadService.getDownloadUrl(id, index);
+
+    if (!downloadUrl) {
+      return res.status(404).json({ message: "File not found" });
     }
-  );
-  
+
+    // Redirect to the download URL
+    return res.redirect(downloadUrl);
+  }
+);
