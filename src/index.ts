@@ -9,8 +9,12 @@ dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT || 4500;
-app.use(express.json()); // Must be before route handlers
+
+// Middleware
+app.use(express.json());
 app.use(morgan("dev"));
+
+// CORS configuration
 app.use(cors({
   origin: true,
   credentials: true,
@@ -28,19 +32,21 @@ app.use(cors({
   optionsSuccessStatus: 204
 }));
 
-// Add a specific handler for OPTIONS requests
+// Handle OPTIONS requests
 app.options('*', cors());
 
-// ✅ Handle preflight OPTIONS requests
+// Base route
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
 });
 
-app.use("/api", mainRouter)
+// API routes
+app.use("/api", mainRouter);
 
+// Error handler
+app.use(ErrorHandler);
 
-app.use(ErrorHandler)
-
+// Start server
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
 });

@@ -17,22 +17,22 @@ uploadRoute.get("/",
 );
 
 // Update a question by ID
-uploadRoute.patch("/:id([a-zA-Z0-9-]+)",
+uploadRoute.patch("/:id",
     file.updateQuestion
 );
 
 // Delete a question by ID
-uploadRoute.delete("/:id([a-zA-Z0-9-]+)",
+uploadRoute.delete("/:id",
     file.deleteQuestion
 );
 
 // Get a question by ID
-uploadRoute.get("/:id([a-zA-Z0-9-]+)",
+uploadRoute.get("/:id",
     file.getQuestionsById
 );
 
 // Download a file by ID
-uploadRoute.get("/download/:id([a-zA-Z0-9-]+)", 
+uploadRoute.get("/download/:id", 
     file.downloadFileById
 );
 
