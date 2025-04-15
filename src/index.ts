@@ -11,13 +11,25 @@ const app: Express = express();
 const port = process.env.PORT || 4500;
 app.use(express.json()); // Must be before route handlers
 app.use(morgan("dev"));
-app.use(cors())
 app.use(cors({
   origin: true,
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: [
+    'Content-Type',
+    'Authorization',
+    'Accept',
+    'Origin',
+    'Access-Control-Request-Method',
+    'Access-Control-Request-Headers'
+  ],
+  exposedHeaders: ['Content-Length', 'Content-Type'],
+  preflightContinue: true,
+  optionsSuccessStatus: 204
 }));
+
+// Add a specific handler for OPTIONS requests
+app.options('*', cors());
 
 // ✅ Handle preflight OPTIONS requests
 app.get("/", (req: Request, res: Response) => {
