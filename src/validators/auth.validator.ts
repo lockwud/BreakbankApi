@@ -7,7 +7,7 @@ const studentIdSchema = z
   .refine((val) => {
     const prefix = val.slice(0, 7);
     const suffix = parseInt(val.slice(7), 10);
-    return prefix === '5221040' && suffix >= 1 && suffix <= 300;
+    return prefix === '5221040' && suffix >= 1 && suffix <= 900;
   }, {
     message: 'Invalid Student ID',
   });
